@@ -917,14 +917,7 @@
 			{
 				"name": "copy_match_stats",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "copy_league_stats",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -1776,14 +1769,7 @@
 			{
 				"name": "copy_team_stats",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "copy_match_stats",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -5359,14 +5345,7 @@
 			{
 				"name": "copy_teams_stats_v2",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "copy_team_stats",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -10730,14 +10709,7 @@
 			{
 				"name": "copy_player_stats",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "copy_teams_stats_v2",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
