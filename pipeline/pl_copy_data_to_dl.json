@@ -1,0 +1,4356 @@
+{
+	"name": "pl_copy_data_to_dl",
+	"properties": {
+		"activities": [
+			{
+				"name": "copy_league_stats",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "season",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "season",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "format",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "format",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "number_of_clubs",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "number_of_clubs",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_matches",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_matches",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "matches_completed",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "matches_completed",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "game_week",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "game_week",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_game_week",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_game_week",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "progress",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "progress",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_goals_per_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_goals_per_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_scored_home_team",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_scored_home_team",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_scored_away_team",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_scored_away_team",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "btts_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "btts_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "clean_sheets_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "clean_sheets_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "prediction_risk",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "prediction_risk",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_scored_advantage_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_scored_advantage_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_defence_advantage_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_defence_advantage_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_advantage_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_advantage_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_corners_per_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_corners_per_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_corners_per_match_home_team",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_corners_per_match_home_team",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_corners_per_match_away_team",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_corners_per_match_away_team",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_corners_for_season",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_corners_for_season",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_cards_per_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_cards_per_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_cards_per_match_home_team",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_cards_per_match_home_team",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_cards_per_match_away_team",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_cards_per_match_away_team",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_cards_for_season",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_cards_for_season",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_25_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_25_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_35_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_35_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_45_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_45_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_55_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_55_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "under_05_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "under_05_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "under_15_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "under_15_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "under_25_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "under_25_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "under_35_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "under_35_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "under_45_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "under_45_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "under_55_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "under_55_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_65_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_65_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_75_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_75_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_85_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_85_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_95_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_95_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_105_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_105_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_115_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_115_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_125_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_125_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_135_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_135_corners_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_25_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_25_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_35_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_35_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_45_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_45_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_55_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_55_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_65_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_65_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_75_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_75_cards_percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_0_to_10",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_0_to_10",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_11_to_20",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_11_to_20",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_21_to_30",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_21_to_30",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_31_to_40",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_31_to_40",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_41_to_50",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_41_to_50",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_51_to_60",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_51_to_60",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_61_to_70",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_61_to_70",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_71_to_80",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_71_to_80",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_81_to_90",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_81_to_90",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_0_to_15",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_0_to_15",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_16_to_30",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_16_to_30",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_31_to_45",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_31_to_45",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_46_to_60",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_46_to_60",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_61_to_75",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_61_to_75",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "goals_min_76_to_90",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "goals_min_76_to_90",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "xg_avg_per_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "xg_avg_per_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_raw_league_stats",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_processed_league_stats",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "copy_match_stats",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "copy_league_stats",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "timestamp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "timestamp",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date_GMT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date_GMT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "attendance",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "attendance",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "referee",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "referee",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Game Week",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Game Week",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pre-Match PPG (Home)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pre-Match PPG (Home)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pre-Match PPG (Away)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pre-Match PPG (Away)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_ppg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_ppg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_ppg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_ppg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_goals_at_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_goals_at_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Home Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Home Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Away Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Away Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "team_a_xg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "team_a_xg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "team_b_xg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "team_b_xg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_goals_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_goals_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "btts_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "btts_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_25_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_25_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_35_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_35_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_45_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_45_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_corners_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_corners_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_cards_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_cards_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_home_team_win",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_home_team_win",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_draw",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_draw",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_away_team_win",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_away_team_win",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over15",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over15",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over25",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over25",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over35",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over35",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over45",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over45",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_btts_yes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_btts_yes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_btts_no",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_btts_no",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "stadium_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "stadium_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_raw_match_stats",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_processed_match_stats",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "copy_team_stats",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "copy_match_stats",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "timestamp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "timestamp",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date_GMT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date_GMT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "attendance",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "attendance",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "referee",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "referee",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Game Week",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Game Week",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pre-Match PPG (Home)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pre-Match PPG (Home)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pre-Match PPG (Away)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pre-Match PPG (Away)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_ppg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_ppg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_ppg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_ppg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_goals_at_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_goals_at_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Home Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Home Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Away Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Away Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "team_a_xg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "team_a_xg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "team_b_xg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "team_b_xg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_goals_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_goals_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "btts_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "btts_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_25_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_25_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_35_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_35_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_45_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_45_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_corners_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_corners_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_cards_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_cards_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_home_team_win",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_home_team_win",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_draw",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_draw",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_away_team_win",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_away_team_win",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over15",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over15",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over25",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over25",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over35",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over35",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over45",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over45",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_btts_yes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_btts_yes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_btts_no",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_btts_no",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "stadium_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "stadium_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_raw_team_stats",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_processed_team_stats",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "copy_teams_stats_v2",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "copy_team_stats",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "timestamp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "timestamp",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date_GMT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date_GMT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "attendance",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "attendance",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "referee",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "referee",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Game Week",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Game Week",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pre-Match PPG (Home)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pre-Match PPG (Home)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pre-Match PPG (Away)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pre-Match PPG (Away)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_ppg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_ppg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_ppg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_ppg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_goals_at_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_goals_at_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Home Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Home Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Away Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Away Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "team_a_xg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "team_a_xg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "team_b_xg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "team_b_xg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_goals_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_goals_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "btts_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "btts_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_25_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_25_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_35_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_35_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_45_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_45_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_corners_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_corners_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_cards_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_cards_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_home_team_win",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_home_team_win",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_draw",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_draw",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_away_team_win",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_away_team_win",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over15",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over15",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over25",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over25",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over35",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over35",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over45",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over45",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_btts_yes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_btts_yes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_btts_no",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_btts_no",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "stadium_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "stadium_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_raw_teams_stats_v2",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_processed_team_stats_v2",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "copy_player_stats",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "copy_teams_stats_v2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "timestamp",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "timestamp",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "date_GMT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "date_GMT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "status",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "attendance",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "attendance",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "referee",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "referee",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Game Week",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Game Week",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pre-Match PPG (Home)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pre-Match PPG (Home)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pre-Match PPG (Away)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Pre-Match PPG (Away)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_ppg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_ppg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_ppg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_ppg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_goal_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "total_goals_at_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "total_goals_at_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_count_half_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_goal_timings",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_corner_count",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_yellow_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_red_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_first_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_second_half_cards",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots_on_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_shots_off_target",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_fouls",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "home_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "home_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "away_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "away_team_possession",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Home Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Home Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Away Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Away Team Pre-Match xG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "team_a_xg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "team_a_xg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "team_b_xg",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "team_b_xg",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_goals_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_goals_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "btts_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "btts_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_25_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_25_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_35_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_35_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_45_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_45_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_HT_FHG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_15_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_15_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "over_05_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "over_05_2HG_percentage_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_corners_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_corners_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "average_cards_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "average_cards_per_match_pre_match",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_home_team_win",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_home_team_win",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_draw",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_draw",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_away_team_win",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_away_team_win",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over15",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over15",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over25",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over25",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over35",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over35",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_ft_over45",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_ft_over45",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_btts_yes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_btts_yes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "odds_btts_no",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "odds_btts_no",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "stadium_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "stadium_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_raw_player_stats",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_processed_player_stats",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
