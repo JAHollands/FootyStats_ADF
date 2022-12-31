@@ -19,6 +19,1775 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "team_name",
+				"type": "String"
+			},
+			{
+				"name": "common_name",
+				"type": "String"
+			},
+			{
+				"name": "season",
+				"type": "String"
+			},
+			{
+				"name": "country",
+				"type": "String"
+			},
+			{
+				"name": "average_attendance_overall",
+				"type": "String"
+			},
+			{
+				"name": "average_attendance_home",
+				"type": "String"
+			},
+			{
+				"name": "average_attendance_away",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_scored_overall",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_scored_home",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_scored_away",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_conceded_overall",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_conceded_home",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_conceded_away",
+				"type": "String"
+			},
+			{
+				"name": "highest_goals_scored_home",
+				"type": "String"
+			},
+			{
+				"name": "highest_goals_scored_away",
+				"type": "String"
+			},
+			{
+				"name": "highest_goals_conceded_home",
+				"type": "String"
+			},
+			{
+				"name": "highest_goals_conceded_away",
+				"type": "String"
+			},
+			{
+				"name": "half_time_points_overall",
+				"type": "String"
+			},
+			{
+				"name": "half_time_points_home",
+				"type": "String"
+			},
+			{
+				"name": "half_time_points_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_recorded_matches_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_recorded_matches_num_home",
+				"type": "String"
+			},
+			{
+				"name": "cornersRecorded_matches_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_against_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_against_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_against_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_against_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_against_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over95_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over105_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over115_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over125_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over135_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over145_corners_num_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over95_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over105_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over115_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over125_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over135_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over145_corners_num_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over95_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over105_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over115_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over125_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over135_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over145_corners_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over95_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over105_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over115_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over125_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over135_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over145_corners_num_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over95_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over105_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over115_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over125_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over135_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over145_corners_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_corners_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_corners_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_corners_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_corners_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "cornerTimingRecorded_matches_overall",
+				"type": "String"
+			},
+			{
+				"name": "cornerTimingRecorded_matches_home",
+				"type": "String"
+			},
+			{
+				"name": "cornerTimingRecorded_matches_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_fh_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_fh_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_fh_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_fh_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_fh_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_fh_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_per_match_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_fh_over4_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_fh_over5_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_fh_over6_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_2h_over4_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_2h_over5_overall",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_2h_over6_overall",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over75_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over85_cards_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over75_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over85_cards_total_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over75_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over85_cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over75_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over85_cards_total_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over75_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over85_cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over75_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over85_cards_total_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_for_overall",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_for_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_for_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_for_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_for_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_for_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_against_overall",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_against_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_against_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_against_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_against_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_cards_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_cards_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_cards_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_cards_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_cards_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_cards_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_cards_against_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "firstGoalScoredPercentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "firstGoalScoredPercentage_home",
+				"type": "String"
+			},
+			{
+				"name": "firstGoalScoredPercentage_away",
+				"type": "String"
+			},
+			{
+				"name": "shots_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "shots_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "shots_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "shots_on_target_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "shots_on_target_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "shots_on_target_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "shots_off_target_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "shots_off_target_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "shots_off_target_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "fouls_by_this_team_overall",
+				"type": "String"
+			},
+			{
+				"name": "fouls_by_this_team_home",
+				"type": "String"
+			},
+			{
+				"name": "fouls_by_this_team_away",
+				"type": "String"
+			},
+			{
+				"name": "fouls_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "fouls_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "fouls_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_home",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_away",
+				"type": "String"
+			},
+			{
+				"name": "offsides_this_team_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsides_this_team_home",
+				"type": "String"
+			},
+			{
+				"name": "offsides_this_team_away",
+				"type": "String"
+			},
+			{
+				"name": "offsidesRecorded_matches_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsidesRecorded_matches_home",
+				"type": "String"
+			},
+			{
+				"name": "offsidesRecorded_matches_away",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "offsides_this_team_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsides_this_team_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "offsides_this_team_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_over05_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_over15_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_over25_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_over35_overall",
+				"type": "String"
+			},
+			{
+				"name": "offsides_total_over45_overall",
+				"type": "String"
+			},
+			{
+				"name": "scoredBothHalves_overall",
+				"type": "String"
+			},
+			{
+				"name": "scoredBothHalves_home",
+				"type": "String"
+			},
+			{
+				"name": "scoredBothHalves_away",
+				"type": "String"
+			},
+			{
+				"name": "scoredBothHalvesPercentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "scoredBothHalvesPercentage_home",
+				"type": "String"
+			},
+			{
+				"name": "scoredBothHalvesPercentage_away",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_both_halves_overall",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_both_halves_home",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_both_halves_away",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_win_overall",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_win_home",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_win_away",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_win_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_win_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_win_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_draw_overall",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_draw_home",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_draw_away",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_draw_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_draw_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_draw_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_lose_overall",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_lose_home",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_lose_away",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_lose_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_lose_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "BTTS_and_lose_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "matches_goal_timings_recorded_overall",
+				"type": "String"
+			},
+			{
+				"name": "matches_goal_timings_recorded_home",
+				"type": "String"
+			},
+			{
+				"name": "matches_goal_timings_recorded_away",
+				"type": "String"
+			},
+			{
+				"name": "total_goals_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "total_goals_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "total_goals_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "average_total_goals_2h_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "average_total_goals_2h_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "average_total_goals_2h_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_2h_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_2h_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_2h_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_2h_per_match_overall",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_2h_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_2h_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_2hg_matches_overall",
+				"type": "String"
+			},
+			{
+				"name": "over15_2hg_matches_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_2hg_matches_overall",
+				"type": "String"
+			},
+			{
+				"name": "over05_2hg_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over15_2hg_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "over25_2hg_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "points_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "points_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "points_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "ppg_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "ppg_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "ppg_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "wins_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "wins_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "wins_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "wins_2h_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "wins_2h_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "wins_2h_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "draws_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "draws_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "draws_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "losses_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "losses_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "losses_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "btts_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "btts_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "btts_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "btts_2h_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "btts_2h_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "btts_2h_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheets_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheets_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheets_2h_away",
+				"type": "String"
+			},
+			{
+				"name": "failed_to_score_2h_overall",
+				"type": "String"
+			},
+			{
+				"name": "failed_to_score_2h_home",
+				"type": "String"
+			},
+			{
+				"name": "failed_to_score_2h_away",
+				"type": "String"
+			}
+		]
 	}
 }

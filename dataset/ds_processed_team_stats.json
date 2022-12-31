@@ -19,6 +19,1179 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "team_name",
+				"type": "String"
+			},
+			{
+				"name": "common_name",
+				"type": "String"
+			},
+			{
+				"name": "season",
+				"type": "String"
+			},
+			{
+				"name": "country",
+				"type": "String"
+			},
+			{
+				"name": "matches_played",
+				"type": "String"
+			},
+			{
+				"name": "matches_played_home",
+				"type": "String"
+			},
+			{
+				"name": "matches_played_away",
+				"type": "String"
+			},
+			{
+				"name": "suspended_matches",
+				"type": "String"
+			},
+			{
+				"name": "wins",
+				"type": "String"
+			},
+			{
+				"name": "wins_home",
+				"type": "String"
+			},
+			{
+				"name": "wins_away",
+				"type": "String"
+			},
+			{
+				"name": "draws",
+				"type": "String"
+			},
+			{
+				"name": "draws_home",
+				"type": "String"
+			},
+			{
+				"name": "draws_away",
+				"type": "String"
+			},
+			{
+				"name": "losses",
+				"type": "String"
+			},
+			{
+				"name": "losses_home",
+				"type": "String"
+			},
+			{
+				"name": "losses_away",
+				"type": "String"
+			},
+			{
+				"name": "points_per_game",
+				"type": "String"
+			},
+			{
+				"name": "points_per_game_home",
+				"type": "String"
+			},
+			{
+				"name": "points_per_game_away",
+				"type": "String"
+			},
+			{
+				"name": "league_position",
+				"type": "String"
+			},
+			{
+				"name": "league_position_home",
+				"type": "String"
+			},
+			{
+				"name": "league_position_away",
+				"type": "String"
+			},
+			{
+				"name": "performance_rank",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded",
+				"type": "String"
+			},
+			{
+				"name": "goal_difference",
+				"type": "String"
+			},
+			{
+				"name": "total_goal_count",
+				"type": "String"
+			},
+			{
+				"name": "total_goal_count_home",
+				"type": "String"
+			},
+			{
+				"name": "total_goal_count_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_away",
+				"type": "String"
+			},
+			{
+				"name": "goal_difference_home",
+				"type": "String"
+			},
+			{
+				"name": "goal_difference_away",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_scored",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_scored_home",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_scored_away",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_conceded",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_conceded_home",
+				"type": "String"
+			},
+			{
+				"name": "minutes_per_goal_conceded_away",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheets",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheets_home",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheets_away",
+				"type": "String"
+			},
+			{
+				"name": "btts_count",
+				"type": "String"
+			},
+			{
+				"name": "btts_count_home",
+				"type": "String"
+			},
+			{
+				"name": "btts_count_away",
+				"type": "String"
+			},
+			{
+				"name": "fts_count",
+				"type": "String"
+			},
+			{
+				"name": "fts_count_home",
+				"type": "String"
+			},
+			{
+				"name": "fts_count_away",
+				"type": "String"
+			},
+			{
+				"name": "first_team_to_score_count",
+				"type": "String"
+			},
+			{
+				"name": "first_team_to_score_count_home",
+				"type": "String"
+			},
+			{
+				"name": "first_team_to_score_count_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_total",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_total_away",
+				"type": "String"
+			},
+			{
+				"name": "cards_total",
+				"type": "String"
+			},
+			{
+				"name": "cards_total_home",
+				"type": "String"
+			},
+			{
+				"name": "cards_total_away",
+				"type": "String"
+			},
+			{
+				"name": "average_possession",
+				"type": "String"
+			},
+			{
+				"name": "average_possession_home",
+				"type": "String"
+			},
+			{
+				"name": "average_possession_away",
+				"type": "String"
+			},
+			{
+				"name": "shots",
+				"type": "String"
+			},
+			{
+				"name": "shots_home",
+				"type": "String"
+			},
+			{
+				"name": "shots_away",
+				"type": "String"
+			},
+			{
+				"name": "shots_on_target",
+				"type": "String"
+			},
+			{
+				"name": "shots_on_target_home",
+				"type": "String"
+			},
+			{
+				"name": "shots_on_target_away",
+				"type": "String"
+			},
+			{
+				"name": "shots_off_target",
+				"type": "String"
+			},
+			{
+				"name": "shots_off_target_home",
+				"type": "String"
+			},
+			{
+				"name": "shots_off_target_away",
+				"type": "String"
+			},
+			{
+				"name": "fouls",
+				"type": "String"
+			},
+			{
+				"name": "fouls_home",
+				"type": "String"
+			},
+			{
+				"name": "fouls_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_half_time",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_half_time",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "goal_difference_half_time",
+				"type": "String"
+			},
+			{
+				"name": "goal_difference_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "goal_difference_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "leading_at_half_time",
+				"type": "String"
+			},
+			{
+				"name": "leading_at_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "leading_at_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "draw_at_half_time",
+				"type": "String"
+			},
+			{
+				"name": "draw_at_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "draw_at_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "losing_at_half_time",
+				"type": "String"
+			},
+			{
+				"name": "losing_at_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "losing_at_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "points_per_game_half_time",
+				"type": "String"
+			},
+			{
+				"name": "points_per_game_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "points_per_game_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "average_total_goals_per_match",
+				"type": "String"
+			},
+			{
+				"name": "average_total_goals_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "average_total_goals_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_per_match",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_per_match",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "total_goals_per_match_half_time",
+				"type": "String"
+			},
+			{
+				"name": "total_goals_per_match_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "total_goals_per_match_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_per_match_half_time",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_per_match_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_per_match_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_per_match_half_time",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_per_match_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_per_match_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_count",
+				"type": "String"
+			},
+			{
+				"name": "over15_count",
+				"type": "String"
+			},
+			{
+				"name": "over25_count",
+				"type": "String"
+			},
+			{
+				"name": "over35_count",
+				"type": "String"
+			},
+			{
+				"name": "over45_count",
+				"type": "String"
+			},
+			{
+				"name": "over55_count",
+				"type": "String"
+			},
+			{
+				"name": "over05_count_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_count_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_count_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_count_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_count_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_count_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_count_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_count_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_count_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_count_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_count_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_count_away",
+				"type": "String"
+			},
+			{
+				"name": "under05_count",
+				"type": "String"
+			},
+			{
+				"name": "under15_count",
+				"type": "String"
+			},
+			{
+				"name": "under25_count",
+				"type": "String"
+			},
+			{
+				"name": "under35_count",
+				"type": "String"
+			},
+			{
+				"name": "under45_count",
+				"type": "String"
+			},
+			{
+				"name": "under55_count",
+				"type": "String"
+			},
+			{
+				"name": "under05_count_home",
+				"type": "String"
+			},
+			{
+				"name": "under15_count_home",
+				"type": "String"
+			},
+			{
+				"name": "under25_count_home",
+				"type": "String"
+			},
+			{
+				"name": "under35_count_home",
+				"type": "String"
+			},
+			{
+				"name": "under45_count_home",
+				"type": "String"
+			},
+			{
+				"name": "under55_count_home",
+				"type": "String"
+			},
+			{
+				"name": "under05_count_away",
+				"type": "String"
+			},
+			{
+				"name": "under15_count_away",
+				"type": "String"
+			},
+			{
+				"name": "under25_count_away",
+				"type": "String"
+			},
+			{
+				"name": "under35_count_away",
+				"type": "String"
+			},
+			{
+				"name": "under45_count_away",
+				"type": "String"
+			},
+			{
+				"name": "under55_count_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over15_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over25_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over35_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over45_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over55_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over05_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over35_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over45_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over55_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over35_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over45_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over55_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "under05_percentage",
+				"type": "String"
+			},
+			{
+				"name": "under15_percentage",
+				"type": "String"
+			},
+			{
+				"name": "under25_percentage",
+				"type": "String"
+			},
+			{
+				"name": "under35_percentage",
+				"type": "String"
+			},
+			{
+				"name": "under45_percentage",
+				"type": "String"
+			},
+			{
+				"name": "under55_percentage",
+				"type": "String"
+			},
+			{
+				"name": "under05_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "under15_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "under25_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "under35_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "under45_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "under55_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "under05_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "under15_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "under25_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "under35_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "under45_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "under55_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_count_half_time",
+				"type": "String"
+			},
+			{
+				"name": "over15_count_half_time",
+				"type": "String"
+			},
+			{
+				"name": "over25_count_half_time",
+				"type": "String"
+			},
+			{
+				"name": "over05_count_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_count_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_count_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_count_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_count_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_count_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "over05_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over15_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over25_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over05_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over15_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over25_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "over05_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over15_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over25_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "win_percentage",
+				"type": "String"
+			},
+			{
+				"name": "win_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "win_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "home_advantage_percentage",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_percentage",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "btts_percentage",
+				"type": "String"
+			},
+			{
+				"name": "btts_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "btts_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "fts_percentage",
+				"type": "String"
+			},
+			{
+				"name": "fts_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "fts_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "first_team_to_score_percentage",
+				"type": "String"
+			},
+			{
+				"name": "first_team_to_score_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "first_team_to_score_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_half_time",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "clean_sheet_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "fts_half_time",
+				"type": "String"
+			},
+			{
+				"name": "fts_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "fts_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "fts_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "fts_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "fts_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "btts_half_time",
+				"type": "String"
+			},
+			{
+				"name": "btts_half_time_home",
+				"type": "String"
+			},
+			{
+				"name": "btts_half_time_away",
+				"type": "String"
+			},
+			{
+				"name": "btts_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "btts_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "btts_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "leading_at_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "leading_at_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "leading_at_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "draw_at_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "draw_at_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "draw_at_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "losing_at_half_time_percentage",
+				"type": "String"
+			},
+			{
+				"name": "losing_at_half_time_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "losing_at_half_time_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "corners_per_match",
+				"type": "String"
+			},
+			{
+				"name": "corners_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "corners_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "cards_per_match",
+				"type": "String"
+			},
+			{
+				"name": "cards_per_match_home",
+				"type": "String"
+			},
+			{
+				"name": "cards_per_match_away",
+				"type": "String"
+			},
+			{
+				"name": "over65_corners_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over75_corners_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over85_corners_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over95_corners_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over105_corners_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over115_corners_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over125_corners_percentage",
+				"type": "String"
+			},
+			{
+				"name": "over135_corners_percentage",
+				"type": "String"
+			},
+			{
+				"name": "xg_for_avg_overall",
+				"type": "String"
+			},
+			{
+				"name": "xg_for_avg_home",
+				"type": "String"
+			},
+			{
+				"name": "xg_for_avg_away",
+				"type": "String"
+			},
+			{
+				"name": "xg_against_avg_overall",
+				"type": "String"
+			},
+			{
+				"name": "xg_against_avg_home",
+				"type": "String"
+			},
+			{
+				"name": "xg_against_avg_away",
+				"type": "String"
+			},
+			{
+				"name": "prediction_risk",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_0_to_10",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_11_to_20",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_21_to_30",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_31_to_40",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_41_to_50",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_51_to_60",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_61_to_70",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_71_to_80",
+				"type": "String"
+			},
+			{
+				"name": "goals_scored_min_81_to_90",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_0_to_10",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_11_to_20",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_21_to_30",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_31_to_40",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_41_to_50",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_51_to_60",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_61_to_70",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_71_to_80",
+				"type": "String"
+			},
+			{
+				"name": "goals_conceded_min_81_to_90",
+				"type": "String"
+			},
+			{
+				"name": "draw_percentage_overall",
+				"type": "String"
+			},
+			{
+				"name": "draw_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "draw_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "loss_percentage_ovearll",
+				"type": "String"
+			},
+			{
+				"name": "loss_percentage_home",
+				"type": "String"
+			},
+			{
+				"name": "loss_percentage_away",
+				"type": "String"
+			},
+			{
+				"name": "over145_corners_percentage",
+				"type": "String"
+			}
+		]
 	}
 }
