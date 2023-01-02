@@ -987,7 +987,7 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2023-01-02T15:06:00Z",
+						"startTime": "2023-01-02T17:24:00Z",
 						"timeZone": "UTC",
 						"schedule": {
 							"minutes": [
@@ -1026,7 +1026,11 @@
 								"referenceName": "ds_sql_pl_stats_2223",
 								"type": "DatasetReference"
 							},
-							"name": "CopyToSQL"
+							"name": "CopyToSQL",
+							"rejectedDataLinkedService": {
+								"referenceName": "ls_data_lake_footballdatajhsa",
+								"type": "LinkedServiceReference"
+							}
 						}
 					],
 					"transformations": [
@@ -1045,7 +1049,7 @@
 						"          AWAY_TEAM as string,",
 						"          FTR as string,",
 						"          FTHG as short,",
-						"          FTAG as short,",
+						"          FTAG as long,",
 						"          HTR as string,",
 						"          HTHG as short,",
 						"          HTAG as short,",
@@ -1146,9 +1150,13 @@
 						"     updateable:false,",
 						"     upsertable:false,",
 						"     format: 'table',",
+						"     dateFormat:'dd/MM/yyyy',",
+						"     timestampFormat:'MM/dd/yyyy HH:mm:ss',",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
-						"     errorHandlingOption: 'stopOnFirstError',",
+						"     errorHandlingOption: 'allErrors',",
+						"     transactionCommit: 'single',",
+						"     reportSuccessOnError: false,",
 						"     mapColumn(",
 						"          DATE,",
 						"          COUNTRY,",
@@ -1185,7 +1193,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_processed_pl_stats_2223')]",
-				"[concat(variables('factoryId'), '/datasets/ds_sql_pl_stats_2223')]"
+				"[concat(variables('factoryId'), '/datasets/ds_sql_pl_stats_2223')]",
+				"[concat(variables('factoryId'), '/linkedServices/ls_data_lake_footballdatajhsa')]"
 			]
 		}
 	]
