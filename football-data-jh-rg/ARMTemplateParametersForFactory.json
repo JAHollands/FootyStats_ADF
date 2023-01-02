@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "football-data-jh-rg"
+		},
+		"ls_data_lake_footballdatajhsa_accountKey": {
+			"value": ""
+		},
+		"ls_sql_footballdatajhsql_connectionString": {
+			"value": ""
+		},
+		"ls_data_lake_footballdatajhsa_properties_typeProperties_url": {
+			"value": "https://footballdatajhsa.dfs.core.windows.net/"
+		},
+		"ls_http_Betonjames_DOT_com_properties_typeProperties_url": {
+			"value": "https://www.betonjames.com/wp-content/uploads/"
+		}
+	}
+}

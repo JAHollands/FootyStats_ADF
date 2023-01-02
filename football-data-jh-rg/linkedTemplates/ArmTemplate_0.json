@@ -1,0 +1,970 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "football-data-jh-rg"
+		},
+		"ls_data_lake_footballdatajhsa_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_data_lake_footballdatajhsa'"
+		},
+		"ls_sql_footballdatajhsql_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sql_footballdatajhsql'"
+		},
+		"ls_data_lake_footballdatajhsa_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://footballdatajhsa.dfs.core.windows.net/"
+		},
+		"ls_http_Betonjames_DOT_com_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.betonjames.com/wp-content/uploads/"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_data_lake_footballdatajhsa')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('ls_data_lake_footballdatajhsa_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('ls_data_lake_footballdatajhsa_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_http_Betonjames_DOT_com')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('ls_http_Betonjames_DOT_com_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_sql_footballdatajhsql')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('ls_sql_footballdatajhsql_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ds_processed_pl_stats_2223')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_data_lake_footballdatajhsa",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "PL_2223",
+						"folderPath": "22-23 Premier League",
+						"fileSystem": "prem-stats-processed"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_data_lake_footballdatajhsa')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ds_raw_pl_stats_2223')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_http_Betonjames_DOT_com",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation",
+						"relativeUrl": "boj-free-data-downloads/england-premier-league-2022-2023.csv"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "DATE",
+						"type": "String"
+					},
+					{
+						"name": "COUNTRY",
+						"type": "String"
+					},
+					{
+						"name": "LEAGUE",
+						"type": "String"
+					},
+					{
+						"name": "TYPE",
+						"type": "String"
+					},
+					{
+						"name": "SEASON",
+						"type": "String"
+					},
+					{
+						"name": "HOME_TEAM",
+						"type": "String"
+					},
+					{
+						"name": "AWAY_TEAM",
+						"type": "String"
+					},
+					{
+						"name": "FTR",
+						"type": "String"
+					},
+					{
+						"name": "FTHG",
+						"type": "String"
+					},
+					{
+						"name": "FTAG",
+						"type": "String"
+					},
+					{
+						"name": "HTR",
+						"type": "String"
+					},
+					{
+						"name": "HTHG",
+						"type": "String"
+					},
+					{
+						"name": "HTAG",
+						"type": "String"
+					},
+					{
+						"name": "ETR",
+						"type": "String"
+					},
+					{
+						"name": "ETHG",
+						"type": "String"
+					},
+					{
+						"name": "ETAG",
+						"type": "String"
+					},
+					{
+						"name": "PENR",
+						"type": "String"
+					},
+					{
+						"name": "PENHG",
+						"type": "String"
+					},
+					{
+						"name": "PENAG",
+						"type": "String"
+					},
+					{
+						"name": "H_ST",
+						"type": "String"
+					},
+					{
+						"name": "H_SOG",
+						"type": "String"
+					},
+					{
+						"name": "H_SFG",
+						"type": "String"
+					},
+					{
+						"name": "H_PT",
+						"type": "String"
+					},
+					{
+						"name": "H_COR",
+						"type": "String"
+					},
+					{
+						"name": "H_FL",
+						"type": "String"
+					},
+					{
+						"name": "H_YC",
+						"type": "String"
+					},
+					{
+						"name": "H_RC",
+						"type": "String"
+					},
+					{
+						"name": "A_ST",
+						"type": "String"
+					},
+					{
+						"name": "A_SOG",
+						"type": "String"
+					},
+					{
+						"name": "A_SFG",
+						"type": "String"
+					},
+					{
+						"name": "A_PT",
+						"type": "String"
+					},
+					{
+						"name": "A_COR",
+						"type": "String"
+					},
+					{
+						"name": "A_FL",
+						"type": "String"
+					},
+					{
+						"name": "A_YC",
+						"type": "String"
+					},
+					{
+						"name": "A_RC",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_http_Betonjames_DOT_com')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ds_sql_pl_stats_2223')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_sql_footballdatajhsql",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "DATE",
+						"type": "date"
+					},
+					{
+						"name": "COUNTRY",
+						"type": "varchar"
+					},
+					{
+						"name": "LEAGUE",
+						"type": "varchar"
+					},
+					{
+						"name": "TYPE",
+						"type": "varchar"
+					},
+					{
+						"name": "SEASON",
+						"type": "varchar"
+					},
+					{
+						"name": "HOME_TEAM",
+						"type": "varchar"
+					},
+					{
+						"name": "AWAY_TEAM",
+						"type": "varchar"
+					},
+					{
+						"name": "FTR_FullTimeResult",
+						"type": "varchar"
+					},
+					{
+						"name": "FTHG_FullTimeHomeTeamGoals",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "FTAG_FullTimeAwayTeamGoals",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "HTR_HalfTimeResult",
+						"type": "varchar"
+					},
+					{
+						"name": "HTHG_HalfTimeHomeTeamGoals",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "HTAG_HalfTimeAwayTeamGoals",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "H_ST_HomeTeamTotalShots",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "H_SOG_HomeTeamShotsOnGoal",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "H_SFG_ShotsOffTarget",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "H_PT_HomeTeamPossession",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "H_COR_HomeCorners",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "H_FL_HomeTeamFouls",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "H_YC_HomeYellowCards",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "H_RC_HomeRedCards",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "A_ST_AwayTeamTotalShots",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "A_SOG_AwayTeamShotsOnGoal",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "A_SFG_AwayTeanOffTarget",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "A_PT_AwayTeamPossession",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "A_COR_AwayTeamCorners",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "A_FL_AwayTeamFouls",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "A_YC_AwayTeamYellowCards",
+						"type": "smallint",
+						"precision": 5
+					},
+					{
+						"name": "A_RC_AwayTeamRedCards",
+						"type": "smallint",
+						"precision": 5
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "pl_2223"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_sql_footballdatajhsql')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pl_ingest_pl_stats_2223')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "ingest_pl_stats_2223",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "HttpReadSettings",
+									"requestMethod": "GET"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
+							},
+							"sink": {
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "MergeFiles"
+								},
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"mappings": [
+									{
+										"source": {
+											"name": "DATE",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "DATE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "COUNTRY",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "COUNTRY",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "LEAGUE",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "LEAGUE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "TYPE",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "TYPE",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "SEASON",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "SEASON",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "HOME_TEAM",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "HOME_TEAM",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "AWAY_TEAM",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "AWAY_TEAM",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FTR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "FTR",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FTHG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "FTHG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "FTAG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "FTAG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "HTR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "HTR",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "HTHG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "HTHG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "HTAG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "HTAG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ETR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ETR",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ETHG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ETHG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "ETAG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ETAG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "PENR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PENR",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "PENHG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PENHG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "PENAG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "PENAG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "H_ST",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "H_ST",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "H_SOG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "H_SOG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "H_SFG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "H_SFG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "H_PT",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "H_PT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "H_COR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "H_COR",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "H_FL",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "H_FL",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "H_YC",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "H_YC",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "H_RC",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "H_RC",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "A_ST",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "A_ST",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "A_SOG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "A_SOG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "A_SFG",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "A_SFG",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "A_PT",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "A_PT",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "A_COR",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "A_COR",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "A_FL",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "A_FL",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "A_YC",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "A_YC",
+											"type": "String",
+											"physicalType": "String"
+										}
+									},
+									{
+										"source": {
+											"name": "A_RC",
+											"type": "String",
+											"physicalType": "String"
+										},
+										"sink": {
+											"name": "A_RC",
+											"type": "String",
+											"physicalType": "String"
+										}
+									}
+								],
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "ds_raw_pl_stats_2223",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "ds_processed_pl_stats_2223",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/ds_raw_pl_stats_2223')]",
+				"[concat(variables('factoryId'), '/datasets/ds_processed_pl_stats_2223')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/tr_ingest_new_data')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_ingest_pl_stats_2223",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2023-01-02T15:06:00Z",
+						"timeZone": "UTC",
+						"schedule": {
+							"minutes": [
+								0
+							],
+							"hours": [
+								0
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_ingest_pl_stats_2223')]"
+			]
+		}
+	]
+}
