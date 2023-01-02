@@ -1,0 +1,488 @@
+{
+	"name": "pl_ingest_pl_stats_2223",
+	"properties": {
+		"activities": [
+			{
+				"name": "ingest_pl_stats_2223",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "MergeFiles"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "DATE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "DATE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "COUNTRY",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "COUNTRY",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LEAGUE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LEAGUE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "TYPE",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "TYPE",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SEASON",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "SEASON",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HOME_TEAM",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HOME_TEAM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "AWAY_TEAM",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "AWAY_TEAM",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FTR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FTR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FTHG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FTHG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FTAG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FTAG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HTR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HTR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HTHG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HTHG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HTAG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HTAG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ETR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ETR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ETHG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ETHG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ETAG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ETAG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PENR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PENR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PENHG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PENHG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PENAG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PENAG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "H_ST",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "H_ST",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "H_SOG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "H_SOG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "H_SFG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "H_SFG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "H_PT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "H_PT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "H_COR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "H_COR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "H_FL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "H_FL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "H_YC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "H_YC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "H_RC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "H_RC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "A_ST",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "A_ST",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "A_SOG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "A_SOG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "A_SFG",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "A_SFG",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "A_PT",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "A_PT",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "A_COR",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "A_COR",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "A_FL",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "A_FL",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "A_YC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "A_YC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "A_RC",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "A_RC",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_raw_pl_stats_2223",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_processed_pl_stats_2223",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
