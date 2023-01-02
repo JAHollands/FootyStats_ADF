@@ -481,6 +481,37 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "trigger_transform_pl_stats",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "ingest_pl_stats_2223",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "df_transform_pl_stats",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
 			}
 		],
 		"annotations": []
