@@ -1,0 +1,24 @@
+{
+	"name": "df_transform_pl_stats_2223",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_processed_pl_stats_2223",
+						"type": "DatasetReference"
+					},
+					"name": "PlStats2223"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> PlStats2223"
+			]
+		}
+	}
+}
