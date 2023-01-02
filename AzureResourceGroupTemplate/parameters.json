@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vulnerabilityAssessments_Default_storageContainerPath": {
+            "value": null
+        },
+        "actionGroups_me_name": {
+            "value": null
+        },
+        "servers_footballdatajhserver_name": {
+            "value": null
+        },
+        "metricalerts_Pipeline_has_run_name": {
+            "value": null
+        },
+        "storageAccounts_footballdatajhsa_name": {
+            "value": null
+        },
+        "factories_football_data_jh_rg_externalid": {
+            "value": null
+        }
+    }
+}
