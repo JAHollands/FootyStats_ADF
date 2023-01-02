@@ -1,0 +1,153 @@
+{
+	"name": "ds_sql_pl_stats_2223",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_footballdatajhsql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "DATE",
+				"type": "date"
+			},
+			{
+				"name": "COUNTRY",
+				"type": "varchar"
+			},
+			{
+				"name": "LEAGUE",
+				"type": "varchar"
+			},
+			{
+				"name": "TYPE",
+				"type": "varchar"
+			},
+			{
+				"name": "SEASON",
+				"type": "varchar"
+			},
+			{
+				"name": "HOME_TEAM",
+				"type": "varchar"
+			},
+			{
+				"name": "AWAY_TEAM",
+				"type": "varchar"
+			},
+			{
+				"name": "FTR_FullTimeResult",
+				"type": "varchar"
+			},
+			{
+				"name": "FTHG_FullTimeHomeTeamGoals",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "FTAG_FullTimeAwayTeamGoals",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "HTR_HalfTimeResult",
+				"type": "varchar"
+			},
+			{
+				"name": "HTHG_HalfTimeHomeTeamGoals",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "HTAG_HalfTimeAwayTeamGoals",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "H_ST_HomeTeamTotalShots",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "H_SOG_HomeTeamShotsOnGoal",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "H_SFG_ShotsOffTarget",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "H_PT_HomeTeamPossession",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "H_COR_HomeCorners",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "H_FL_HomeTeamFouls",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "H_YC_HomeYellowCards",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "H_RC_HomeRedCards",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "A_ST_AwayTeamTotalShots",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "A_SOG_AwayTeamShotsOnGoal",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "A_SFG_AwayTeanOffTarget",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "A_PT_AwayTeamPossession",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "A_COR_AwayTeamCorners",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "A_FL_AwayTeamFouls",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "A_YC_AwayTeamYellowCards",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "A_RC_AwayTeamRedCards",
+				"type": "smallint",
+				"precision": 5
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "pl_2223"
+		}
+	}
+}
