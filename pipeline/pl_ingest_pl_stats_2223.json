@@ -7,15 +7,9 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Failed"
-						]
-					},
-					{
 						"activity": "DeleteProcessedStats",
 						"dependencyConditions": [
-							"Succeeded"
+							"Completed"
 						]
 					}
 				],
@@ -526,46 +520,9 @@
 				}
 			},
 			{
-				"name": "Lookup1",
-				"type": "Lookup",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"dataset": {
-						"referenceName": "ds_processed_pl_stats_2223",
-						"type": "DatasetReference"
-					}
-				}
-			},
-			{
 				"name": "DeleteProcessedStats",
 				"type": "Delete",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,

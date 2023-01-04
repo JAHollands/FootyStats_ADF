@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "PL_2223",
+				"fileName": "PL_2223.csv",
 				"folderPath": "22-23 Premier League",
 				"fileSystem": "prem-stats-processed"
 			},
@@ -19,6 +19,147 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "DATE",
+				"type": "String"
+			},
+			{
+				"name": "COUNTRY",
+				"type": "String"
+			},
+			{
+				"name": "LEAGUE",
+				"type": "String"
+			},
+			{
+				"name": "TYPE",
+				"type": "String"
+			},
+			{
+				"name": "SEASON",
+				"type": "String"
+			},
+			{
+				"name": "HOME_TEAM",
+				"type": "String"
+			},
+			{
+				"name": "AWAY_TEAM",
+				"type": "String"
+			},
+			{
+				"name": "FTR",
+				"type": "String"
+			},
+			{
+				"name": "FTHG",
+				"type": "String"
+			},
+			{
+				"name": "FTAG",
+				"type": "String"
+			},
+			{
+				"name": "HTR",
+				"type": "String"
+			},
+			{
+				"name": "HTHG",
+				"type": "String"
+			},
+			{
+				"name": "HTAG",
+				"type": "String"
+			},
+			{
+				"name": "ETR",
+				"type": "String"
+			},
+			{
+				"name": "ETHG",
+				"type": "String"
+			},
+			{
+				"name": "ETAG",
+				"type": "String"
+			},
+			{
+				"name": "PENR",
+				"type": "String"
+			},
+			{
+				"name": "PENHG",
+				"type": "String"
+			},
+			{
+				"name": "PENAG",
+				"type": "String"
+			},
+			{
+				"name": "H_ST",
+				"type": "String"
+			},
+			{
+				"name": "H_SOG",
+				"type": "String"
+			},
+			{
+				"name": "H_SFG",
+				"type": "String"
+			},
+			{
+				"name": "H_PT",
+				"type": "String"
+			},
+			{
+				"name": "H_COR",
+				"type": "String"
+			},
+			{
+				"name": "H_FL",
+				"type": "String"
+			},
+			{
+				"name": "H_YC",
+				"type": "String"
+			},
+			{
+				"name": "H_RC",
+				"type": "String"
+			},
+			{
+				"name": "A_ST",
+				"type": "String"
+			},
+			{
+				"name": "A_SOG",
+				"type": "String"
+			},
+			{
+				"name": "A_SFG",
+				"type": "String"
+			},
+			{
+				"name": "A_PT",
+				"type": "String"
+			},
+			{
+				"name": "A_COR",
+				"type": "String"
+			},
+			{
+				"name": "A_FL",
+				"type": "String"
+			},
+			{
+				"name": "A_YC",
+				"type": "String"
+			},
+			{
+				"name": "A_RC",
+				"type": "String"
+			}
+		]
 	}
 }
