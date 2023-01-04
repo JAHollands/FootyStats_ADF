@@ -37,7 +37,20 @@
 					{
 						"name": "ingest_pl_stats_2223",
 						"type": "Copy",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Lookup1",
+								"dependencyConditions": [
+									"Failed"
+								]
+							},
+							{
+								"activity": "DeleteProcessedStats",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "0.12:00:00",
 							"retry": 0,
@@ -60,8 +73,7 @@
 							"sink": {
 								"type": "DelimitedTextSink",
 								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"type": "AzureBlobFSWriteSettings"
 								},
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
@@ -583,6 +595,46 @@
 								"parameters": {}
 							}
 						}
+					},
+					{
+						"name": "DeleteProcessedStats",
+						"type": "Delete",
+						"dependsOn": [
+							{
+								"activity": "Lookup1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "ds_processed_pl_stats_2223",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"logStorageSettings": {
+								"linkedServiceName": {
+									"referenceName": "ls_data_lake_footballdatajhsa",
+									"type": "LinkedServiceReference"
+								},
+								"path": "errors-sql"
+							},
+							"enableLogging": true,
+							"storeSettings": {
+								"type": "AzureBlobFSReadSettings",
+								"recursive": true,
+								"enablePartitionDiscovery": false
+							}
+						}
 					}
 				],
 				"policy": {
@@ -594,7 +646,8 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_raw_pl_stats_2223')]",
 				"[concat(variables('factoryId'), '/datasets/ds_processed_pl_stats_2223')]",
-				"[concat(variables('factoryId'), '/dataflows/df_transform_pl_stats')]"
+				"[concat(variables('factoryId'), '/dataflows/df_transform_pl_stats')]",
+				"[concat(variables('factoryId'), '/linkedServices/ls_data_lake_footballdatajhsa')]"
 			]
 		},
 		{
